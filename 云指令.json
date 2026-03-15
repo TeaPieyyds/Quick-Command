@@ -1,0 +1,318 @@
+{
+  
+ "指令":[
+/*
+{
+"标题":"☁指令测试",
+"指令文件":"默认指令2.json"
+},
+ */
+ {
+   "标题":"☁指令组使用说明",
+   "隐藏":true,
+   "布局":[
+{"类型":"指令集","标题":"主标题  点击展开或关闭  长按复制全文","图标":"图片/232218.png","运行":true,"内容":["2000","//本行注释 上面2000表示延迟2秒","say 长按消息","//点击复制单个指令","🉑设置图片","/say 你好","/camera @s fade"],
+"2":{"图片":"图片/脉冲.png","注释":"长按查看指令"},
+"6":{"图片":"图片/脉冲.png","注释":"黑屏"}}
+
+   ]
+   },
+ 
+
+
+ {
+"标题":"wiki",
+"高":30,
+"背景":"#402E97FF",
+"字体颜色":"#FFFFFF",
+"隐藏":true,
+"标题加粗":true,
+"布局":[
+{"类型":"网页","地址":"https://zh.minecraft.wiki","新窗口":true,"名称":"打开"}
+]
+},
+ 
+ //命令集作者弃坑了，问过了，可以搬运
+ 
+ 
+  {
+   "标题":"简单命令合集",
+   "内容":"命令集搬运",
+   "隐藏":true,
+   "布局":[
+{"类型":"指令集","标题":"雪球传送 传送位置自行修改","图标":"图片/232218.png","内容":["execute @e[type=snowball] ~ ~ ~ tp @s 1 1 1","/kill @e[type=snowball]"]},
+
+{"类型":"指令集","标题":"克隆命令方块下方方块至上方","图标":"图片/232218.png","内容":["/clone ~ ~-1 ~ ~ ~-1 ~ ~ ~1 ~"]},
+
+{"类型":"指令集","标题":"隐身＋生物tp跟随","图标":"图片/232218.png","运行":true,"内容":["execute @a[r=20] ~ ~ ~ tp @e[name=动物] ^ ^ ^-0.1 facing @s","execute @a[r=20] ~ ~ ~ effect @s invisibility 99999 50 true"]},
+
+{"类型":"指令集","标题":"实体追踪（单人版）","图标":"图片/232218.png","内容":["execute @a[r=10] ~ ~ ~ tp @e[type=pig] ^ ^ ^-0.1 facing @s"]},
+
+{"类型":"指令集","标题":"时间禁止（旧execute）","图标":"图片/232218.png","内容":["execute @e[type=!player] ~~~ tp @s ~~~"]},
+
+   {"类型":"指令集","标题":"时间禁止（新execute）","图标":"图片/232218.png","内容":["execute as @e[type=!player] at @s run tp @s ~~~"]},
+
+{"类型":"指令集","标题":"传送弓","图标":"图片/232218.png","内容":["/execute @e[type=arrow] ~ ~ ~ tp @p ~ ~ ~ "]},
+
+{"类型":"指令集","标题":"雪球附带尖牙","图标":"图片/232218.png","内容":["execute @a ~ ~ ~ execute @e[type=snowball] ~ ~ ~ summon evocation_fang"]},
+
+{"类型":"指令集","标题":"实体追踪（单人版）","图标":"图片/232218.png","内容":["execute @a[r=10] ~ ~ ~ tp @e[type=pig] ^ ^ ^-0.1 facing @s"]},
+
+{"类型":"指令集","标题":"实体追踪（单人版）","图标":"图片/232218.png","内容":["execute @a[r=10] ~ ~ ~ tp @e[type=pig] ^ ^ ^-0.1 facing @s"]},
+
+{"类型":"指令集","标题":"经验喷泉","图标":"图片/232218.png","内容":["/summon minecraft:xp_orb ~ ~3 ~"]},
+
+{"类型":"指令集","标题":"经验池","图标":"图片/232218.png","内容":["/execute @a ~ ~ ~ detect ~ ~ ~ water 0 xp 20 @s"]},
+
+   ]
+   },
+ 
+ 
+{
+   "标题":"击杀特效及音效",
+   "内容":"命令集搬运",
+   "隐藏":true,
+   "布局":[
+{"类型":"指令集","标题":"击杀特效及音效(旧execute)","图标":"图片/232218.png","展开":true,"运行":false,"内容":[
+"生物死亡会播放音效,并生成粒子",
+"/scoreboard objectives add a dummy",
+"scoreboard players set @a[scores={a=!2}] a 0",
+"scoreboard players set @e[type=player] a 1",
+"execute @a[scores={a=0}] ~ ~ ~ particle minecraft:cauldron_splash_particle ~ ~ ~",
+"execute @a[scores={a=0}] ~ ~ ~ playsound mob.endermen.death @s",
+"scoreboard players set @a[scores={a=0}] a 2"
+],
+
+"1":{"图片":"图片/232150.png","注释":"创建记分板（需单独运行）","字体颜色":"#0000FF"},
+"2":{"图片":"图片/循环.png","注释":"设置玩家分数不等于2的玩家分数为0"},
+"3":{"图片":"图片/连锁.png","注释":"将任然存活的玩家分数设置为1死亡玩家分数保留为0"},
+"4":{"图片":"图片/连锁.png","注释":"在分数为0的玩家处生成粒子"},
+"5":{"图片":"图片/连锁.png","注释":"在分数为0的玩家处播放音效"},
+"6":{"图片":"图片/连锁.png","注释":"将死亡玩家分数设置为0"}
+}
+
+   ]
+   },
+
+{
+"标题":"记分板商店",
+   "内容":"命令集搬运",
+   "隐藏":true,
+"布局":[
+{
+"类型":"指令集",
+"标题":"创建积分板",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/scoreboard objectives add hb dummy",
+"/scoreboard objectives add hb2 dummy"
+],
+"0":{"图片":"图片/脉冲.png","注释":"","字体颜色":"#0000FF"},
+"1":{"图片":"图片/脉冲.png","注释":"","字体颜色":"#0000FF"}
+},
+
+{
+"类型":"指令集",
+"标题":"重置记分板为0",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"scoreboard players add @a hb 0"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+},
+
+{
+"类型":"指令集",
+"标题":"清除物品获得分数",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"clear @p[r=1] apple 0 1",
+"scoreboard players add @p hb2 1 dummy"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"},
+"1":{"图片":"图片/连锁.png","注释":"有条件","字体颜色":"#0000FF"}
+}
+]
+},
+
+{
+"标题":"购买物品",
+"内容":"命令集搬运",
+"隐藏":true,
+"布局":[
+
+{
+"类型":"指令集",
+"标题":"购买物品",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"title @p[scores={hb=..9}] title §l§c购买失败×",
+"scoreboard players remove @p[scores={hb=10..}] hb 10",
+"title @p title §l§a购买成功✓",
+"playsound random.orb @p",
+"give @p apple 1"
+],
+"0":{"图片":"图片/脉冲.png","注释":"货币不足提醒","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"扣除积分","字体颜色":"#0000FF"}
+,"2":{"图片":"图片/连锁.png","注释":"购买成功提醒","字体颜色":"#0000FF"}
+,"3":{"图片":"图片/连锁.png","注释":"播放音效","字体颜色":"#0000FF"}
+,"4":{"图片":"图片/连锁.png","注释":"给予物品","字体颜色":"#0000FF"}
+
+}
+
+]},
+
+{
+"标题":"显示玩家下线",
+"内容":"命令集搬运",
+"隐藏":true,
+"布局":[
+
+{
+"类型":"指令集",
+"标题":"显示玩家下线",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"scoreboard objectives remove hb2 dummy",
+"scoreboard objectives setdisplay list hb2",
+"execute @a ~ ~ ~ scoreboard players operation @s hb2 = @s hb",
+"scoreboard objectives add hb2 dummy"
+],
+"0":{"图片":"图片/循环.png","注释":"延迟240","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+,"2":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+,"3":{"图片":"图片/连锁.png","注释":"延迟400","字体颜色":"#0000FF"}
+
+}
+
+]},
+
+{
+"标题":"爆炸弓（落地爆炸，全方位检测（新语法））",
+"内容":"：₂₀₂₄ 🇪＝🇲 🇨²",
+"左图标":"https://q1.qlogo.cn/g?b=qq&nk=355413729&s=640",
+"左图标高":30,
+"左图标宽":30,
+"布局":[
+
+{
+"类型":"指令集",
+"标题":"x坐标检测",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~0.01 ~ ~  air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+,
+{
+"类型":"指令集",
+"标题":"x",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~-0.01 ~ ~  air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+,
+{
+"类型":"指令集",
+"标题":"y坐标",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~ ~0.01 ~  air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+,
+{
+"类型":"指令集",
+"标题":"y",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~ ~-0.01 ~  air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+,
+{
+"类型":"指令集",
+"标题":"z坐标",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~ ~ ~0.01 air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+,
+{
+"类型":"指令集",
+"标题":"z",
+"图标":"图片/232218.png",
+"展开":true,
+"运行":false,
+"内容":[
+"/execute as @e[type=arrow] at @s unless block ~ ~ ~-0.01 air align y run /summon minecraft:ender_crystal x ~ ~ ~",
+"/execute as @e[type=ender_crystal] at @s run /summon minecraft:snowball 引爆球 ~ ~ ~"
+],
+"0":{"图片":"图片/循环.png","注释":"","字体颜色":"#0000FF"}
+,"1":{"图片":"图片/连锁.png","注释":"","字体颜色":"#0000FF"}
+
+}
+
+]},
+   
+   {
+   "标题":"留言上传指令🗯",
+   "内容":"在网页中反馈，看见了会上传上去",
+"提示":"2.7版本暂时用不了",
+   "隐藏":true,
+   "布局":[
+
+"先在下方创建json后复制分享",
+
+{"类型":"插件视图","路径":"classes.dex","包":"com.example.websocket.CreateCammand","方法":"run","参数":["#context","#plugin"]},
+
+{"类型":"文本","粗体":true,"字体大小":14,"自适应":true,"注释":"建议直接qq发给我1789105095","注释颜色":"#ff0000"},
+
+{"类型":"网页","名称":"点我分享你的指令组(json)","自适应":true,"新窗口":true,"地址":"http://qaubkmaoi1isq6oo.mikecrm.com/9kHQ4tE"},
+   ]
+   }
+ 
+ ]
+  }
