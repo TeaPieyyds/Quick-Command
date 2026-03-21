@@ -10,15 +10,11 @@
   "布局":[
 {"类型":"文本","内容":"公告栏","字体大小":25,"粗体":true},
 {"类型":"分割线","内容":"true","内容":"true"},
-{"类型":"文本","html加载":true,"注释":"<font color='#666666'><b>当前版本二改作者:</b></font>:&nbsp;<b>一只屑茶派喵~(爱喝茶的茶派)</b>&nbsp;<br/><br/><font color='#666666'><b>版本</b></font>:&nbsp;
-4.8
-<br/><br/><font color='#666666'><b>更新时间</b></font>:&nbsp;
-26-3-15
+{"类型":"文本","html加载":true,"注释":"<font color='#666666'><b>当前版本二改作者:</b></font>:&nbsp;<b>一只屑茶派喵~(爱喝茶的茶派)</b>&nbsp;<br/><br/><font color='#666666'><b>版本</b></font>:&nbsp;4.8
+<br/><br/><font color='#666666'><b>更新时间</b></font>:&nbsp;26-3-15
 <br/><br/><font color='#666666'><b>更新内容</b></font>:&nbsp;<br/>
-
 <br/>更新了上传指令集
 <br/>修复已知的bug
-
 "}
     
   ]
